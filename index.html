@@ -5,7 +5,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Dr. Mariana Monteiro</title>
         <script src="https://cdn.tailwindcss.com"></script>
-        <script src="https://unpkg.com/lucide@latest"></script>
         <style>
             @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
             body {
@@ -23,17 +22,17 @@
             class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-50"
         >
             <div
-                class="max-w-5xl mx-auto px-6 h-20 flex justify-between items-center"
+                class="max-w-5xl mx-auto px-6 py-3 sm:py-0 sm:h-20 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 sm:gap-0"
             >
                 <div>
-                    <h1 class="text-xl font-bold tracking-tight text-slate-900">
+                    <h1 class="text-lg sm:text-xl font-bold tracking-tight text-slate-900">
                         Dr. Mariana Monteiro
                     </h1>
                     <p class="text-slate-500 text-xs tracking-wider uppercase">
                         Imperial College London
                     </p>
                 </div>
-                <nav class="flex items-center space-x-6 text-sm font-medium">
+                <nav class="flex items-center space-x-5 sm:space-x-6 text-sm font-medium overflow-x-auto">
                     <a
                         href="#about"
                         class="nav-link text-slate-400 hover:text-slate-900 pb-1 transition-colors"
@@ -59,12 +58,12 @@
         </header>
 
         <div
-            class="max-w-5xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-4 gap-16"
+            class="max-w-5xl mx-auto px-6 py-8 md:py-16 grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-16"
         >
             <!-- Profile Sidebar -->
-            <aside class="md:col-span-1 space-y-8">
+            <aside class="md:col-span-1 space-y-6 md:space-y-8">
 				<div class="space-y-4">
-					<div class="w-full aspect-square bg-slate-100 rounded-xl overflow-hidden border border-slate-100 shadow-sm flex items-center justify-center text-slate-300">
+					<div class="w-32 h-32 md:w-full md:h-auto aspect-square bg-slate-100 rounded-full md:rounded-xl overflow-hidden border border-slate-100 shadow-sm flex items-center justify-center text-slate-300">
 						<img
 							src="photo.jpg"
 							alt="Dr. Mariana Monteiro"
@@ -72,7 +71,7 @@
 							onerror="this.style.display = 'none'; this.nextElementSibling.style.display = 'flex';"
 						/>
 						<div class="hidden flex items-center justify-center w-full h-full">
-							<i data-lucide="graduation-cap" class="w-16 h-16 stroke-1"></i>
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-16 h-16 stroke-1" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
 						</div>
 					</div>
 					<p class="text-[11px] text-slate-500 leading-snug italic px-1">
@@ -82,11 +81,24 @@
 
 				<div class="space-y-4">
 					<h3 class="text-xs font-bold text-slate-400 uppercase tracking-widest">Contact</h3>
-					<div class="space-y-3">
-						<a href="mailto:m.monteiro21@imperial.ac.uk" class="flex items-center gap-3 text-sm text-slate-600 hover:text-blue-600 transition-colors group">
-							<i data-lucide="mail" class="w-4 h-4 text-slate-400 group-hover:text-blue-500"></i>
-							Email
-						</a>
+					<div class="flex flex-wrap gap-x-5 gap-y-3 md:block md:space-y-3">
+						<div class="flex items-center gap-2">
+							<a href="mailto:m.monteiro21@imperial.ac.uk" class="flex items-center gap-3 text-sm text-slate-600 hover:text-blue-600 transition-colors group">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-slate-400 group-hover:text-blue-500" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+								Email
+							</a>
+							<button
+								type="button"
+								id="copy-email"
+								data-email="m.monteiro21@imperial.ac.uk"
+								title="Copy email address"
+								aria-label="Copy email address"
+								class="flex items-center gap-1 p-1 -m-1 text-slate-400 hover:text-blue-500 transition-colors"
+							>
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5" aria-hidden="true"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg>
+								<span id="copy-email-label" class="hidden text-[11px]">Copied</span>
+							</button>
+						</div>
 						<a href="https://github.com/marianaipmonteiro" target="_blank" class="flex items-center gap-3 text-sm text-slate-600 hover:text-blue-600 transition-colors group">
 							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-slate-400 group-hover:text-blue-500"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
 							GitHub
@@ -96,22 +108,22 @@
 							LinkedIn
 						</a>
 						<a href="https://scholar.google.com/citations?user=aU5GgCsAAAAJ&hl=pt-PT" target="_blank" class="flex items-center gap-3 text-sm text-slate-600 hover:text-blue-600 transition-colors group">
-							<i data-lucide="graduation-cap" class="w-4 h-4 text-slate-400 group-hover:text-blue-500"></i>
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-slate-400 group-hover:text-blue-500" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
 							Google Scholar
 						</a>
 						<a href="CV_MarianaMonteiro.pdf" target="_blank" class="flex items-center gap-3 text-sm text-slate-600 hover:text-blue-600 transition-colors group">
-							<i data-lucide="file-text" class="w-4 h-4 text-slate-400 group-hover:text-blue-500"></i>
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-slate-400 group-hover:text-blue-500" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path><path d="M14 2v4a2 2 0 0 0 2 2h4"></path><path d="M10 9H8"></path><path d="M16 13H8"></path><path d="M16 17H8"></path></svg>
 							CV
 						</a>
 					</div>
 				</div>
 			</aside>
             <!-- Content Area -->
-            <main class="md:col-span-3 space-y-24">
-                <section id="about" class="space-y-6 scroll-mt-24">
+            <main class="md:col-span-3 space-y-16 md:space-y-24">
+                <section id="about" class="space-y-6 scroll-mt-32 sm:scroll-mt-24">
                     <h2 class="text-2xl font-bold text-slate-900">Biography</h2>
                     <div
-                        class="max-w-none text-slate-600 leading-relaxed text-lg font-light"
+                        class="max-w-none text-slate-600 leading-relaxed text-base md:text-lg font-light"
                     >
                         <p>
                             Research Associate at the
@@ -123,9 +135,9 @@
                             >, Department of Chemical Engineering, at Imperial College London specializing
                             in <strong>Process Systems Engineering</strong>.
                         </p>
-						
+
 						<p class="mt-4">
-						Previously, I was a PhD student at                             
+						Previously, I was a PhD student at
 							<a
                                 href="https://profiles.imperial.ac.uk/cleo.kontoravdi98"
                                 target="_blank"
@@ -134,7 +146,7 @@
 							</a
                             > where I worked on <strong>Bioprocess Systems Modelling</strong>
 						</p>
-						
+
                         <p class="mt-4">
                             Our work has been featured in
                             <a
@@ -148,7 +160,7 @@
                     </div>
                 </section>
 
-                <section id="education" class="space-y-8 scroll-mt-24">
+                <section id="education" class="space-y-8 scroll-mt-32 sm:scroll-mt-24">
                     <h2 class="text-2xl font-bold text-slate-900">Education</h2>
                     <div class="space-y-10">
                         <div class="relative pl-6 border-l border-slate-100">
@@ -156,13 +168,13 @@
                                 class="absolute -left-[1px] top-0 h-4 w-[1px] bg-slate-900"
                             ></div>
                             <div
-                                class="flex justify-between items-baseline mb-1"
+                                class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-x-4 mb-1"
                             >
                                 <h3 class="font-bold text-slate-900">
                                     PhD in Chemical Engineering
                                 </h3>
                                 <span
-                                    class="text-xs font-mono text-slate-400 uppercase"
+                                    class="text-xs font-mono text-slate-400 uppercase shrink-0"
                                     >2021 — 2025</span
                                 >
                             </div>
@@ -182,13 +194,13 @@
                                 class="absolute -left-[1px] top-0 h-4 w-[1px] bg-slate-900"
                             ></div>
                             <div
-                                class="flex justify-between items-baseline mb-1"
+                                class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-x-4 mb-1"
                             >
                                 <h3 class="font-bold text-slate-900">
                                     MSc Chemical Engineering
                                 </h3>
                                 <span
-                                    class="text-xs font-mono text-slate-400 uppercase"
+                                    class="text-xs font-mono text-slate-400 uppercase shrink-0"
                                     >2017 — 2019</span
                                 >
                             </div>
@@ -208,13 +220,13 @@
                                 class="absolute -left-[1px] top-0 h-4 w-[1px] bg-slate-900"
                             ></div>
                             <div
-                                class="flex justify-between items-baseline mb-1"
+                                class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-x-4 mb-1"
                             >
                                 <h3 class="font-bold text-slate-900">
                                     Exchange Semester Chemical Engineering
                                 </h3>
                                 <span
-                                    class="text-xs font-mono text-slate-400 uppercase"
+                                    class="text-xs font-mono text-slate-400 uppercase shrink-0"
                                     >2017 — 2018</span
                                 >
                             </div>
@@ -227,13 +239,13 @@
                                 class="absolute -left-[1px] top-0 h-4 w-[1px] bg-slate-900"
                             ></div>
                             <div
-                                class="flex justify-between items-baseline mb-1"
+                                class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-x-4 mb-1"
                             >
                                 <h3 class="font-bold text-slate-900">
                                     BSc Chemical Engineering
                                 </h3>
                                 <span
-                                    class="text-xs font-mono text-slate-400 uppercase"
+                                    class="text-xs font-mono text-slate-400 uppercase shrink-0"
                                     >2014 — 2017</span
                                 >
                             </div>
@@ -244,19 +256,16 @@
                     </div>
                 </section>
 
-                <section id="publications" class="space-y-8 scroll-mt-24">
+                <section id="publications" class="space-y-8 scroll-mt-32 sm:scroll-mt-24">
                     <h2 class="text-2xl font-bold text-slate-900">
                         Selected Publications
                     </h2>
                     <div class="space-y-8">
                         <!-- Publication 7 -->
                         <div class="flex gap-4 items-start">
-                            <i
-                                data-lucide="file-text"
-                                class="w-4 h-4 mt-1.5 text-slate-400 shrink-0"
-                            ></i>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 mt-1.5 text-slate-400 shrink-0" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path><path d="M14 2v4a2 2 0 0 0 2 2h4"></path><path d="M10 9H8"></path><path d="M16 13H8"></path><path d="M16 17H8"></path></svg>
                             <p
-                                class="text-slate-600 leading-relaxed text-[15px]"
+                                class="text-slate-600 leading-relaxed text-[15px] break-words min-w-0"
                             >
                                 Mariana Monteiro, Morrissey James, Cleo
                                 Kontoravdi (2026).
@@ -271,15 +280,12 @@
                                 >.
                             </p>
                         </div>
-						
+
                         <!-- Publication 6 -->
                         <div class="flex gap-4 items-start">
-                            <i
-                                data-lucide="file-text"
-                                class="w-4 h-4 mt-1.5 text-slate-400 shrink-0"
-                            ></i>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 mt-1.5 text-slate-400 shrink-0" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path><path d="M14 2v4a2 2 0 0 0 2 2h4"></path><path d="M10 9H8"></path><path d="M16 13H8"></path><path d="M16 17H8"></path></svg>
                             <p
-                                class="text-slate-600 leading-relaxed text-[15px]"
+                                class="text-slate-600 leading-relaxed text-[15px] break-words min-w-0"
                             >
                                 Mariana Monteiro, Konstantinos Flevaris, Cleo
                                 Kontoravdi (2025).
@@ -299,12 +305,9 @@
 
                         <!-- Publication 5 -->
                         <div class="flex gap-4 items-start">
-                            <i
-                                data-lucide="file-text"
-                                class="w-4 h-4 mt-1.5 text-slate-400 shrink-0"
-                            ></i>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 mt-1.5 text-slate-400 shrink-0" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path><path d="M14 2v4a2 2 0 0 0 2 2h4"></path><path d="M10 9H8"></path><path d="M16 13H8"></path><path d="M16 17H8"></path></svg>
                             <p
-                                class="text-slate-600 leading-relaxed text-[15px]"
+                                class="text-slate-600 leading-relaxed text-[15px] break-words min-w-0"
                             >
                                 Miriam Sarkis, Mariana Monteiro, Andrea
                                 Bernardi, Ranjith Chiplunkar, Cleo Kontoravdi,
@@ -324,12 +327,9 @@
 
                         <!-- Publication 4 -->
                         <div class="flex gap-4 items-start">
-                            <i
-                                data-lucide="file-text"
-                                class="w-4 h-4 mt-1.5 text-slate-400 shrink-0"
-                            ></i>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 mt-1.5 text-slate-400 shrink-0" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path><path d="M14 2v4a2 2 0 0 0 2 2h4"></path><path d="M10 9H8"></path><path d="M16 13H8"></path><path d="M16 17H8"></path></svg>
                             <p
-                                class="text-slate-600 leading-relaxed text-[15px]"
+                                class="text-slate-600 leading-relaxed text-[15px] break-words min-w-0"
                             >
                                 Mariana Monteiro, Fengqi You, Cleo Kontoravdi
                                 (2025).
@@ -352,12 +352,9 @@
 
                         <!-- Publication 3 -->
                         <div class="flex gap-4 items-start">
-                            <i
-                                data-lucide="file-text"
-                                class="w-4 h-4 mt-1.5 text-slate-400 shrink-0"
-                            ></i>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 mt-1.5 text-slate-400 shrink-0" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path><path d="M14 2v4a2 2 0 0 0 2 2h4"></path><path d="M10 9H8"></path><path d="M16 13H8"></path><path d="M16 17H8"></path></svg>
                             <p
-                                class="text-slate-600 leading-relaxed text-[15px]"
+                                class="text-slate-600 leading-relaxed text-[15px] break-words min-w-0"
                             >
                                 Mariana Monteiro, Cleo Kontoravdi (2024).
                                 <a
@@ -378,12 +375,9 @@
 
                         <!-- Publication 2 -->
                         <div class="flex gap-4 items-start">
-                            <i
-                                data-lucide="file-text"
-                                class="w-4 h-4 mt-1.5 text-slate-400 shrink-0"
-                            ></i>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 mt-1.5 text-slate-400 shrink-0" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path><path d="M14 2v4a2 2 0 0 0 2 2h4"></path><path d="M10 9H8"></path><path d="M16 13H8"></path><path d="M16 17H8"></path></svg>
                             <p
-                                class="text-slate-600 leading-relaxed text-[15px]"
+                                class="text-slate-600 leading-relaxed text-[15px] break-words min-w-0"
                             >
                                 Mariana Monteiro, Sarah Fadda, Cleo Kontoravdi
                                 (2023).
@@ -403,12 +397,9 @@
 
                         <!-- Publication 1 -->
                         <div class="flex gap-4 items-start">
-                            <i
-                                data-lucide="file-text"
-                                class="w-4 h-4 mt-1.5 text-slate-400 shrink-0"
-                            ></i>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 mt-1.5 text-slate-400 shrink-0" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path><path d="M14 2v4a2 2 0 0 0 2 2h4"></path><path d="M10 9H8"></path><path d="M16 13H8"></path><path d="M16 17H8"></path></svg>
                             <p
-                                class="text-slate-600 leading-relaxed text-[15px]"
+                                class="text-slate-600 leading-relaxed text-[15px] break-words min-w-0"
                             >
                                 Mariana Monteiro, Cleo Kontoravdi (2023).
                                 <a
@@ -428,10 +419,10 @@
                     </div>
                 </section>
 
-                <section id="projects" class="space-y-8 scroll-mt-24">
+                <section id="projects" class="space-y-8 scroll-mt-32 sm:scroll-mt-24">
                     <h2 class="text-2xl font-bold text-slate-900">Projects</h2>
                     <div
-                        class="bg-slate-50 p-6 rounded-xl border border-slate-100"
+                        class="bg-slate-50 p-5 sm:p-6 rounded-xl border border-slate-100"
                     >
                         <h3 class="font-bold text-slate-900">
                             CellTarget: A convex optimisation approach to
@@ -452,7 +443,7 @@
                             target="_blank"
                             class="inline-flex items-center gap-2 text-xs font-bold mt-4 uppercase tracking-widest text-sky-700 hover:text-sky-800 transition-colors"
                         >
-                            <i data-lucide="github" class="w-3 h-3"></i> View on
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg> View on
                             GitHub
                         </a>
                     </div>
@@ -477,11 +468,6 @@
 			 * @returns {void}
 			 */
 			function initApp() {
-				// @ts-ignore
-				if (typeof lucide !== 'undefined') {
-					lucide.createIcons();
-				}
-				
 				/** @type {HTMLElement | null} */
 				const yearElement = document.getElementById("year");
 				if (yearElement) {
@@ -511,6 +497,12 @@
 						}
 					});
 
+					// At the bottom of the page, the last section can't scroll up to the top,
+					// so highlight it once there's no more room to scroll.
+					if (window.innerHeight + scrollPosition >= document.documentElement.scrollHeight - 2 && sections.length) {
+						current = sections[sections.length - 1].getAttribute("id") || "";
+					}
+
 					navLinks.forEach((/** @type {HTMLAnchorElement} */ link) => {
 						link.classList.remove("active");
 						if (link.getAttribute("href") === `#${current}`) {
@@ -520,10 +512,49 @@
 				};
 
 				window.addEventListener('scroll', handleScroll);
+				handleScroll();
+
+				/** @type {HTMLButtonElement | null} */
+				const copyButton = document.getElementById("copy-email");
+				/** @type {HTMLElement | null} */
+				const copyLabel = document.getElementById("copy-email-label");
+
+				/**
+				 * Copies the email address, with a fallback for browsers without the Clipboard API.
+				 * @param {string} text
+				 * @returns {Promise<void>}
+				 */
+				const copyText = async (text) => {
+					if (navigator.clipboard && window.isSecureContext) {
+						await navigator.clipboard.writeText(text);
+						return;
+					}
+					const textarea = document.createElement("textarea");
+					textarea.value = text;
+					textarea.setAttribute("readonly", "");
+					textarea.style.position = "fixed";
+					textarea.style.opacity = "0";
+					document.body.appendChild(textarea);
+					textarea.select();
+					document.execCommand("copy");
+					document.body.removeChild(textarea);
+				};
+
+				if (copyButton && copyLabel) {
+					copyButton.addEventListener("click", async () => {
+						try {
+							await copyText(copyButton.dataset.email || "");
+							copyLabel.textContent = "Copied";
+						} catch (e) {
+							copyLabel.textContent = copyButton.dataset.email || "";
+						}
+						copyLabel.classList.remove("hidden");
+						setTimeout(() => copyLabel.classList.add("hidden"), 2000);
+					});
+				}
 			}
 
 			window.onload = initApp;
         </script>
     </body>
-</html>
 </html>
